@@ -1,0 +1,13 @@
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+    $size: 40px;
+    background: #FFF;
+    border: solid 1px #333;
+    width: $size * 3;
+    height: $size * 4;
+}
