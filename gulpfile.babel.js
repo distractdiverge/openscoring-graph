@@ -15,6 +15,7 @@ const reload = browserSync.reload;
 gulp.task('html', () =>
     gulp.src(['app/*.html'])
         .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream())
 );
 
 // Compress non-webpack css
@@ -24,6 +25,7 @@ gulp.task('styles', () =>
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(gulp.dest('dist/styles'))
+        .pipe(browserSync.stream())
 );
 
 // Package up js and required files
@@ -31,6 +33,7 @@ gulp.task('webpack', () =>
     gulp.src('./app/scripts/main.js')
         .pipe(webpack(webpackConfig))
         .pipe(gulp.dest('dist/scripts'))
+        .pipe(browserSync.stream())
 );
 
 // Clean output directory
@@ -47,7 +50,7 @@ gulp.task('serve', ['webpack', 'styles', 'html'], () => {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.scss'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
+  gulp.watch(['app/scripts/**/*.js'], ['webpack', reload]);
 });
 
 // Build production files, the default task

@@ -8,5 +8,8 @@ module.exports = {
                 loaders: ["babel"]
             }
         ]
+    },
+    output: {
+        filename: '[name].js'
     }
 }
