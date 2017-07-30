@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Draggable from 'react-draggable';
+import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 
 const App = React.createClass({
     getInitialState: function() {
@@ -26,13 +27,19 @@ const App = React.createClass({
             <div>
                 <h1>Openscoring Graph</h1>
                 <Draggable zIndex={100} {...dragHandlers}>
-                    <div className="box">Component 1</div>
+                    <Card>
+                        <CardTitle title="Component 1"/>
+                    </Card>
                 </Draggable>
                 <Draggable zIndex={100} {...dragHandlers}>
-                    <div className="box">Component 2</div>
+                    <Card>
+                        <CardTitle title="Component 2"/>
+                    </Card>
                 </Draggable>
                 <Draggable zIndex={100} {...dragHandlers}>
-                    <div className="box">Component 3</div>
+                    <Card>
+                        <CardTitle title="Component 3"/>
+                    </Card>
                 </Draggable>
             </div>
         );
