@@ -1,0 +1,7 @@
+language: nodejs
+node_js:
+  - "6"
+  - "8"
+cache: yarn
+script:
+  - npm run build
