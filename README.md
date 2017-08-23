@@ -16,8 +16,17 @@ on the default port 8080
     * or ```yarn```
  * Execute start up script
     * ```npm run start```
-    * or ```gulp```
+
+## Openscoring Server
+The openscoring server has been setup with docker-compose
+to start the server, run ```docker-compose up```
 
 ## Current Progress
 The state of this project is still early in research phase. This project
 does not yet hook into openscoring. Only early UI development is in progress.
+
+
+## Models
+There are a few example models contained within this repo, they have been
+borrowed from the [data mining group](http://dmg.org/).
+[PMML Examples](http://dmg.org/pmml/pmml_examples/index.html)

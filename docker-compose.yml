@@ -1,0 +1,9 @@
+version: '3'
+services:
+  openscoring:
+    image: "jpmml/openscoring:latest"
+    command: --model-dir /openscoring/pmml
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/models:/openscoring/pmml
